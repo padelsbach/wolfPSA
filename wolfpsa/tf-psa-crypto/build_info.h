@@ -56,8 +56,4 @@
     #define MBEDTLS_CIPHER_MODE_CTR
 #endif /* PSA_WANT_ALG_CTR */
 
-#if !defined(NO_FILESYSTEM) && !defined(__ZEPHYR__)
-    #define MBEDTLS_FS_IO
-#endif /* !NO_FILESYSTEM && !__ZEPHYR__ */
-
 #endif /* TF_PSA_CRYPTO_BUILD_INFO_H */
