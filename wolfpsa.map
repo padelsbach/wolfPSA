@@ -1,5 +1,9 @@
 WOLFPSA_1.0 {
     global:
+        mbedtls_pk_free;
+        mbedtls_pk_init;
+        mbedtls_pk_parse_key;
+        mbedtls_pk_parse_keyfile;
         mbedtls_platform_zeroize;
         mbedtls_psa_crypto_free;
         psa_aead_abort;
@@ -136,6 +140,10 @@ WOLFPSA_1.0 {
         wolfpsa_test_set_next_key_id;
         wolfPSA_SetDefaultDevID;
         wolfPSA_GetDefaultDevID;
+        /* Mbed TLS compatibility layer, MBEDTLS_COMPAT=1 */
+        wolfSSL_mbedtls_*;
+        mbedtls_condition_variable_*;
+        mbedtls_mutex_*;
         /* The wolfCrypt objects a devId selects live inside this library,
          * so a shared-library user has to register the device against this
          * copy of the callback table rather than their own wolfSSL. The raw
